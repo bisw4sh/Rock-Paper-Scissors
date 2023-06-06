@@ -13,30 +13,26 @@ const options = ['rock', 'paper', 'scissors']
 
 
 const handleClick = (e) => {
-  const userPicked = e.target.getAttribute('value')
-  console.log('User Picked ' + userPicked)
-
   const indexPicked = Math.floor(Math.random() * options.length)
+  const userPicked = e.target.getAttribute('value')
   const computerPicked = options[indexPicked]
-  console.log('Computer Picked ' + computerPicked)
 
-  let result;
-
+  console.log(`User picked ${userPicked} and Computer picked ${computerPicked}`)
 
   // For the condition of Draw
   if(computerPicked === userPicked){
-    result = `Draw`
+    status.textContent = `You Drew`
   }
     // For the condition of win
     else if(winCondition[computerPicked] === userPicked){
-      result = `Won`
+      status.textContent = `You Won`
 
     }
+    // For the condition of loss
     else{
-      result = `Loss`
+      status.textContent = `You Lost`
     }
 
-  console.log(result)  
   
 }
 
